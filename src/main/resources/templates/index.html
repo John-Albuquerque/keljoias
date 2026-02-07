@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>KelJoias | Elegância em cada detalhe</title>
 
-    <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="../static/css/style.css">
     <!-- Fonte elegante -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +12,9 @@
 
 <header class="header">
     <h1 class="logo">KelJoias</h1>
-    <nav>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <nav class="menu">
         <a href="#">Início</a>
         <a href="#">Coleções</a>
         <a href="#">Sobre</a>
@@ -24,12 +25,11 @@
 <section class="hero">
     <h2>Joias que refletem sua essência</h2>
     <p>Elegância, delicadeza e sofisticação em cada detalhe.</p>
-    <button>Ver coleção</button>
+    <button type="button">Ver coleção</button>
 </section>
 
 <section class="produtos">
     <h3>Destaques</h3>
-
     <div class="grid">
         <div class="produto">
             <div class="img"></div>
