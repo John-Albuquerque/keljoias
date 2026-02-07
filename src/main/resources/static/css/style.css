@@ -101,3 +101,48 @@ nav a {
     padding: 24px;
     font-size: 14px;
 }
+
+/* MENU MOBILE */
+.menu {
+    display: flex;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* Breakpoint */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: var(--card);
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .menu a {
+        margin: 12px 0;
+        font-size: 18px;
+    }
+
+    /* Mostra quando clicar */
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+}
