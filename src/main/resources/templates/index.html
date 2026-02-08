@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>KelJoias | Elegância em cada detalhe</title>
 
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
     <!-- Fonte elegante -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="header">
     <h1 class="logo">KelJoias</h1>
     <input type="checkbox" id="menu-toggle">
@@ -23,40 +25,48 @@
     </nav>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
     <h2>Joias que refletem sua essência</h2>
     <p>Elegância, delicadeza e sofisticação em cada detalhe.</p>
     <button type="button">Ver coleção</button>
 </section>
 
+<!-- ================= PRODUTOS ================= -->
 <section class="produtos">
     <h3>Destaques</h3>
-    <div class="grid">
-        <div class="produto">
+
+    <div class="produtos-container grid">
+        <div class="produto produto-card">
             <div class="img"></div>
             <h4>Anel Dourado</h4>
             <span>R$ 199,90</span>
+            <button type="button">Comprar</button>
         </div>
 
-        <div class="produto">
+        <div class="produto produto-card">
             <div class="img"></div>
             <h4>Colar Elegance</h4>
             <span>R$ 249,90</span>
+            <button type="button">Comprar</button>
         </div>
 
-        <div class="produto">
+        <div class="produto produto-card">
             <div class="img"></div>
             <h4>Brinco Pérola</h4>
             <span>R$ 149,90</span>
+            <button type="button">Comprar</button>
         </div>
     </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
     <p>© 2026 KelJoias • Pagamento via Pix</p>
 </footer>
 
-<script src="/static/script.js"></script>
+<!-- JS -->
+<script th:src="@{/js/script.js}"></script>
 
 </body>
 </html>

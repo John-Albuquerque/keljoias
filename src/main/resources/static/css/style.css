@@ -1,6 +1,7 @@
 :root {
     --bg: #f6f2ee;        /* marrom bem claro */
     --primary: #5a3e2b;  /* marrom elegante */
+    --secondary: #8b6f47;
     --text: #2e2e2e;
     --card: #ffffff;
 }
@@ -12,12 +13,12 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: var(--bg);
-    color: var(--text);
+    color: #3b2f2f;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 .header {
     display: flex;
     justify-content: space-between;
@@ -31,14 +32,29 @@ body {
     color: var(--primary);
 }
 
-nav a {
+.menu {
+    display: flex;
+}
+
+.menu a {
     margin-left: 24px;
     text-decoration: none;
     color: var(--primary);
     font-weight: 500;
 }
 
-/* Hero */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* ================= HERO ================= */
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -64,7 +80,7 @@ nav a {
     cursor: pointer;
 }
 
-/* Produtos */
+/* ================= PRODUTOS ================= */
 .produtos {
     padding: 80px 60px;
 }
@@ -73,52 +89,62 @@ nav a {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     margin-bottom: 40px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-}
-
-.produto {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 10px;
     text-align: center;
 }
 
-.produto .img {
-    height: 160px;
-    background: #ddd;
+/* GRID */
+.produtos-container,
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+/* CARD */
+.produto,
+.produto-card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* IMAGEM */
+.produto .img,
+.produto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 16px;
 }
 
-/* Footer */
+/* BOTÃO */
+.produto button,
+.produto-card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.produto button:hover,
+.produto-card button:hover {
+    background-color: #6f5737;
+}
+
+/* ================= FOOTER ================= */
 .footer {
     text-align: center;
     padding: 24px;
     font-size: 14px;
 }
 
-/* MENU MOBILE */
-.menu {
-    display: flex;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    color: var(--primary);
-    cursor: pointer;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-/* Breakpoint */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
@@ -141,9 +167,11 @@ nav a {
         font-size: 18px;
     }
 
-    /* Mostra quando clicar */
     #menu-toggle:checked ~ .menu {
         display: flex;
     }
-}
+
+    .header {
+        padding: 24px;
+    }
 }
